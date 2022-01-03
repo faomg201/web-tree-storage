@@ -3,12 +3,13 @@ import { FormControl, FormGroup,Validators,FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 import { LocalStorageService } from 'angular-web-storage'
+
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-adminlogin',
+  templateUrl: './adminlogin.component.html',
+  styleUrls: ['./adminlogin.component.css']
 })
-export class LoginComponent implements OnInit {
+export class AdminloginComponent implements OnInit {
   
   token: any
   userid: any
@@ -39,9 +40,9 @@ export class LoginComponent implements OnInit {
       data => {
         this.token = this.local.get('user').token
         console.log(this.token)
-        if(data.status == true && data.result.role === "user"){
+        if(data.status == true && data.result.role === "admin"){
           this.token = this.local.get('user').token
-          this.router.navigate(['/home'])
+          this.router.navigate(['/manage'])
         } else {
           alert('Usernaem or password is incorrect!');
         }
@@ -60,10 +61,6 @@ export class LoginComponent implements OnInit {
   getuserid(){
     this.userid = this.local.get('user').result.id
     return this.userid
-  }
-
-  signup() {
-    this.router.navigate(['/signup'])
   }
 
   get username(){

@@ -11,9 +11,6 @@ const userSchema = Schema({
     username: String,
     password: String,
     email: String,
-    gender: String,
-    birth: String,
-    phone: String,
     role: String
 },  {
     conllection: 'users'

@@ -8,9 +8,6 @@ const userSchema = Schema({
     username: String,
     password: String,
     email: String,
-    gender: String,
-    birth: Date,
-    phone: Number,
     role: String
 },  {
     conllection: 'users'
@@ -50,6 +47,17 @@ const getUserData = (id) => {
         })
     })
 }
+const getAlluser = () =>{
+    return new Promise ((resolve, reject) => {
+        User.find({},(err, data) => {
+            if(err){
+                reject(new Error('Cannot get all User'));
+            }else{
+                resolve(data)
+            }
+        })
+    });
+}
 
 
 router.route('/updateuser/:id').put(authorization,(req, res) => {
@@ -68,9 +76,9 @@ router.route('/updateuser/:id').put(authorization,(req, res) => {
     })
 })
 
-router.route('/getuserdata/:id').get(authorization,(req, res) => {
-    const id = req.params.id
-     getUserData(id)
+router.route('/getuserdata/:id')
+.get((req, res) => {
+    getAlluser()
      .then(result => {
             res.status(200).send(result)
      })
@@ -79,3 +87,28 @@ router.route('/getuserdata/:id').get(authorization,(req, res) => {
      })
 })
 module.exports = router
+
+router.route('/getuser')
+    .get((req, res)  => {
+        getAlluser()
+        .then(result => {
+            res.status(200).json(result)
+        })
+        .catch( err => {
+            console.log(error);
+        })
+    })
+
+    router.route('/getuser/:type')
+  .get(authorization,(req, res) => {
+      const type = req.params.type
+      getuser(type)
+      .then(result => {
+            console.log(result)
+            res.status(200).send(result)
+      })
+      .catch(err => {
+        console.log(err)
+        res.status(400).json('No '+ type)
+      })
+  })
