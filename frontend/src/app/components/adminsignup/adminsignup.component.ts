@@ -1,28 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormArray } from '@angular/forms';
-import { SignupService } from '../../services/signup.service'
+import { AdminSignupService } from '../../services/adminsignup.service'
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  selector: 'app-adminsignup',
+  templateUrl: './adminsignup.component.html',
+  styleUrls: ['./adminsignup.component.css']
 })
-export class SignupComponent implements OnInit {
+export class AdminsignupComponent implements OnInit {
 
   Role: string[] = ['Admin','User'];
   Gender: string[] = ['Male','Female'];
 
   signupForm = new FormGroup({
-    username: new FormControl('',[Validators.required,Validators.pattern('[a-z A-Z 0-9]+$')]),
+    username: new FormControl('',[Validators.required,Validators.pattern('[a-z A-Z]+$')]),
     password: new FormControl('',[Validators.required]),
     email: new FormControl('',[Validators.required,Validators.email]),
     role: new FormControl('',[Validators.required]),
+    dt: new FormControl('',[Validators.required]),
   });
 
   previewLoaded: boolean = false;
 
-  constructor(private sup: SignupService, private router: Router) { }
+  constructor(private sup: AdminSignupService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -32,10 +33,10 @@ export class SignupComponent implements OnInit {
     this.sup.signup(this.signupForm.value).subscribe(
       data => {
         if(!data){
-          alert('Can not signup!444');
+          alert('Can not signup!');
         }else{
-          alert('Can signup!!');
-
+          alert('Signup successfuly!!Xd');
+          this.back()
         }
       },
       err =>{
@@ -52,17 +53,13 @@ export class SignupComponent implements OnInit {
   get username(){
     return this.signupForm.get('username') as FormArray;
   }
-
-  get phone(){
-    return this.signupForm.get('phone') as FormArray;
-  }
-
   get password(){
     return this.signupForm.get('password') as FormArray;
   }
 
   back(){
-    this.router.navigate(['/login'])
+    this.router.navigate(['/manage'])
   }
-}
 
+
+}

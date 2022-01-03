@@ -9,6 +9,10 @@ import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
+import { TopbarComponent } from './components/topbar/topbar.component';
+import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
+import { ManageComponent } from './components/manage/manage.component';
+import { AdminsignupComponent } from './components/adminsignup/adminsignup.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { HeaderComponent } from './components/header/header.component';
     LoginComponent,
     SignupComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    TopbarComponent,
+    AdminloginComponent,
+    ManageComponent,
+    AdminsignupComponent
   ],
   imports: [
     BrowserModule,
