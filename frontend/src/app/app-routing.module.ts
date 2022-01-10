@@ -7,6 +7,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
 import { ManageComponent } from './components/manage/manage.component';
 import { AdminsignupComponent } from './components/adminsignup/adminsignup.component';
+import { BarpageComponent } from './components/barpage/barpage.component';
+import { SecbarpageComponent } from './components/secbarpage/secbarpage.component';
 
 const routes: Routes = [
   {path: 'signup', component: SignupComponent },
@@ -16,8 +18,10 @@ const routes: Routes = [
   {path: 'adminlogin', component: AdminloginComponent},
   {path: 'manage', component: ManageComponent},
   {path: 'adminsignup', component: AdminsignupComponent},
+  {path: 'barpage', component: BarpageComponent},
+  {path: 'secbarpage', component: SecbarpageComponent},
   {path:'',
-  redirectTo: 'login',
+  redirectTo: 'home',
   pathMatch: 'full'
 }
 ];

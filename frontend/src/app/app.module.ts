@@ -13,6 +13,8 @@ import { TopbarComponent } from './components/topbar/topbar.component';
 import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
 import { ManageComponent } from './components/manage/manage.component';
 import { AdminsignupComponent } from './components/adminsignup/adminsignup.component';
+import { BarpageComponent } from './components/barpage/barpage.component';
+import { SecbarpageComponent } from './components/secbarpage/secbarpage.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { AdminsignupComponent } from './components/adminsignup/adminsignup.compo
     TopbarComponent,
     AdminloginComponent,
     ManageComponent,
-    AdminsignupComponent
+    AdminsignupComponent,
+    BarpageComponent,
+    SecbarpageComponent
   ],
   imports: [
     BrowserModule,

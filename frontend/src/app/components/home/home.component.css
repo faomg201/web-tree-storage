@@ -1,0 +1,22 @@
+.text{
+    font-size: 30px;
+    color: rgb(17, 17, 15);
+    text-align: center;
+  }
+
+.text2{
+    font-size: 18px;
+    color: rgb(17, 17, 15);
+    text-align: center;
+  }
+
+.text3{
+    font-size: 18px;
+    color: rgb(17, 17, 15);
+    text-align: center;
+  }
+
+.grad {
+    background-image: linear-gradient(to top, rgb(5, 141, 73), rgb(7, 204, 106));
+    width:100%;
+  }
