@@ -9,7 +9,13 @@ import { Router } from '@angular/router';
 })
 export class TopbarComponent implements OnInit {
 
-  constructor(private router:Router, public local:LocalStorageService) { }
+  userid: any
+  token: any
+
+  constructor(private router:Router, public local:LocalStorageService) { 
+    this.userid = this.local.get('user').result.id
+    this.token = this.local.get('user').token
+  }
 
   ngOnInit(): void {
   }

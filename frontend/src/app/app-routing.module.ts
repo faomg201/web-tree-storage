@@ -9,6 +9,8 @@ import { ManageComponent } from './components/manage/manage.component';
 import { AdminsignupComponent } from './components/adminsignup/adminsignup.component';
 import { BarpageComponent } from './components/barpage/barpage.component';
 import { SecbarpageComponent } from './components/secbarpage/secbarpage.component';
+import { AllproductComponent } from './components/product/allproduct/allproduct.component';
+import { PerennialComponent } from './components/product/perennial/perennial.component';
 
 const routes: Routes = [
   {path: 'signup', component: SignupComponent },
@@ -20,6 +22,8 @@ const routes: Routes = [
   {path: 'adminsignup', component: AdminsignupComponent},
   {path: 'barpage', component: BarpageComponent},
   {path: 'secbarpage', component: SecbarpageComponent},
+  {path: 'allproduct', component: AllproductComponent},
+  {path: 'perennial', component: PerennialComponent},
   {path:'',
   redirectTo: 'home',
   pathMatch: 'full'

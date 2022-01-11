@@ -14,7 +14,7 @@ export class AdminsignupComponent implements OnInit {
   Gender: string[] = ['Male','Female'];
 
   signupForm = new FormGroup({
-    username: new FormControl('',[Validators.required,Validators.pattern('[a-z A-Z]+$')]),
+    username: new FormControl('',[Validators.required,Validators.pattern('[a-z A-Z 0-9]+$')]),
     password: new FormControl('',[Validators.required]),
     email: new FormControl('',[Validators.required,Validators.email]),
     role: new FormControl('',[Validators.required]),
