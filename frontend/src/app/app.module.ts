@@ -15,6 +15,8 @@ import { ManageComponent } from './components/manage/manage.component';
 import { AdminsignupComponent } from './components/adminsignup/adminsignup.component';
 import { BarpageComponent } from './components/barpage/barpage.component';
 import { SecbarpageComponent } from './components/secbarpage/secbarpage.component';
+import { AllproductComponent } from './components/product/allproduct/allproduct.component';
+import { PerennialComponent } from './components/product/perennial/perennial.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { SecbarpageComponent } from './components/secbarpage/secbarpage.componen
     ManageComponent,
     AdminsignupComponent,
     BarpageComponent,
-    SecbarpageComponent
+    SecbarpageComponent,
+    AllproductComponent,
+    PerennialComponent
   ],
   imports: [
     BrowserModule,
